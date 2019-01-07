@@ -49,9 +49,6 @@ class PaypalButton extends React.Component {
 
         const onAuthorize = (data, actions) => {
             return actions.payment.execute().then((payment_data) => {
-                debugger
-                console.log("some stuff")
-                console.log(`payment_data: ${JSON.stringify(payment_data, null, 1)}`)
                 const payment = Object.assign({}, this.props.payment);
                 payment.paid = true;
                 payment.cancelled = false;
@@ -62,7 +59,7 @@ class PaypalButton extends React.Component {
                 // getting buyer's shipping address and email
                 payment.address = payment_data.payer.payer_info.shipping_address;
                 payment.email = payment_data.payer.payer_info.email;
-                this.props.onSuccess(payment);
+                this.props.onSuccess(payment_data);
             })
         }
 
