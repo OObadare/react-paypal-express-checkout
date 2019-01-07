@@ -60,6 +60,7 @@ class PaypalButton extends React.Component {
                 // getting buyer's shipping address and email
                 payment.address = payment_data.payer.payer_info.shipping_address;
                 payment.email = payment_data.payer.payer_info.email;
+                payment.phone = payment_data.payer.payer_info.phone;
                 this.props.onSuccess(payment_data);
             })
         }
