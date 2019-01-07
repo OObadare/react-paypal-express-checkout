@@ -147,6 +147,7 @@
                         payment.cancelled = false;
                         payment.payerID = data.payerID;
                         payment.paymentID = data.paymentID;
+                        payment.transactionID = data.transactions[0].authorization.id;
                         payment.paymentToken = data.paymentToken;
                         payment.returnUrl = data.returnUrl;
                         // getting buyer's shipping address and email
